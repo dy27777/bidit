@@ -1,7 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Nunito", sans-serif;
+}
+
+input,
+button {
+  border: none;
 }
 
 .nav {
@@ -12,12 +25,35 @@
   box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
 }
 
+.nav_logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav_logo h1 {
+  color: #1166f0;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.nav_logo span {
+  color: #11a2f0;
+}
+
+.nav_account {
+  flex-grow: 0.02;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
 .post {
   width: 230px;
   border-radius: 8px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  margin: 10px;
+  margin: 15px 10px;
 }
 
 .post:hover {
@@ -40,6 +76,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .app_add {
@@ -58,4 +95,34 @@
 
 .app_add:hover {
   box-shadow: 1px 1px 10px rgba(240, 128, 128, 1);
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.add_form label,
+button {
+  display: block;
+}
+
+.add_form label {
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+.add_form input {
+  border-radius: 5px;
+  background-color: #ededed;
+  height: 30px;
+  width: 300px;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin: 20px auto;
 }

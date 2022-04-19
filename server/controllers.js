@@ -3,4 +3,9 @@ const home = (req, res) => {
   console.log("hit home route");
 };
 
-module.exports = { home };
+const addPost = (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
+};
+
+module.exports = { home, addPost };

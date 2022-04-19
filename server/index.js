@@ -23,6 +23,8 @@ mongoose
 
 // middlewares
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // routes
 app.use("/", routes);
