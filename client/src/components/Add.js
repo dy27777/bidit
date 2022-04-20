@@ -9,7 +9,7 @@ const Add = () => {
     goal: 0,
   });
 
-  const sendForm = async () => {
+  const sendAddForm = async () => {
     console.log("sending...");
     const res = await fetch("http://localhost:3001/add", {
       method: "POST",
@@ -64,7 +64,7 @@ const Add = () => {
           type="number"
           id="goal"
         />
-        <button className="btn" onClick={sendForm}>
+        <button className="btn" onClick={sendAddForm}>
           Start Petition
         </button>
       </div>

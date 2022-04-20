@@ -99,6 +99,7 @@ button {
 
 .add {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 400px;
@@ -119,10 +120,17 @@ button {
   background-color: #ededed;
   height: 30px;
   width: 300px;
+  padding: 2px 8px;
 }
 
 .btn {
   border-radius: 5px;
   padding: 6px 12px;
   margin: 20px auto;
+  font-weight: 600;
+  width: 150px;
+}
+
+.login_questions {
+  text-align: center;
 }

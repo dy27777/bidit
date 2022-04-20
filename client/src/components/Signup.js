@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({
     username: "",
     pwd: "",
   });
 
-  const sendLoginForm = async () => {
+  const sendSignupForm = async () => {
     try {
-      const res = await fetch("http://localhost:3001/login", {
+      const res = await fetch("http://localhost:3001/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -44,18 +44,12 @@ const Login = () => {
             });
           }}
         />
-        <button onClick={sendLoginForm} className="btn">
-          Log In
+        <button onClick={sendSignupForm} className="btn">
+          Sign Up
         </button>
-      </div>
-      <div className="login_questions">
-        <h4>Forgot Password?</h4>
-        <h4>
-          Don't have an Account? <Link to="/account/signup">Sign up here.</Link>
-        </h4>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
