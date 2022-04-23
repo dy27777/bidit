@@ -1,14 +1,18 @@
-const Post = () => {
+import { Link } from "react-router-dom";
+
+const Post = ({ linkStyle }) => {
   return (
-    <div className="post">
-      <img
-        src="https://assets.nst.com.my/images/articles/dirisjrs_1647088111.jpg"
-        className="post_img"
-      />
-      <h3>Sam Ke Ting is INNOCENT!</h3>
-      <p>800,000 petition signed!</p>
-      <div className="post_bar"></div>
-    </div>
+    <Link style={linkStyle} to="/test/singlePost">
+      <div className="post">
+        <img
+          src="https://i.ytimg.com/vi/KKUVoPAzU4A/maxresdefault.jpg"
+          className="post_img"
+        />
+        <h3>1989 bmw e30 coupe (abandoned)</h3>
+        <p>Highest Bid Now: 35,000</p>
+        <div className="post_bar"></div>
+      </div>
+    </Link>
   );
 };
 

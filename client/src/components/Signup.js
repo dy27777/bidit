@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: "",
     pwd: "",
+    email: "",
   });
 
   const sendSignupForm = async () => {
@@ -28,6 +28,16 @@ const Signup = () => {
         <input
           type="text"
           id="username"
+          onChange={(e) => {
+            setFormData((p) => {
+              return { ...p, [e.target.id]: e.target.value };
+            });
+          }}
+        />
+        <label htmlFor="email">Email:</label>
+        <input
+          type="text"
+          id="email"
           onChange={(e) => {
             setFormData((p) => {
               return { ...p, [e.target.id]: e.target.value };

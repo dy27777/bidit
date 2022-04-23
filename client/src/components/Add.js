@@ -6,7 +6,7 @@ const Add = () => {
     title: "",
     desc: "",
     image: "",
-    goal: 0,
+    price: 0,
   });
 
   const sendAddForm = async () => {
@@ -54,7 +54,7 @@ const Add = () => {
           type="text"
           id="image"
         />
-        <label htmlFor="goal">Goal:</label>
+        <label htmlFor="price">Price:</label>
         <input
           onChange={(e) => {
             setFormData((p) => {
@@ -62,10 +62,10 @@ const Add = () => {
             });
           }}
           type="number"
-          id="goal"
+          id="price"
         />
         <button className="btn" onClick={sendAddForm}>
-          Start Petition
+          Auction
         </button>
       </div>
     </div>

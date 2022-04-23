@@ -8,7 +8,8 @@
 
 body,
 input,
-button {
+button,
+pre {
   font-family: "Nunito", sans-serif;
 }
 
@@ -31,13 +32,13 @@ button {
 }
 
 .nav_logo h1 {
-  color: #1166f0;
   font-weight: 700;
   font-size: 28px;
 }
 
 .nav_logo span {
-  color: #11a2f0;
+  font-size: 18px;
+  margin-left: 2px;
 }
 
 .nav_account {
@@ -80,7 +81,8 @@ button {
 }
 
 .app_add {
-  background-color: lightcoral;
+  background-color: black;
+  color: white;
   width: 50px;
   height: 50px;
   font-size: 24px;
@@ -127,10 +129,28 @@ button {
   border-radius: 5px;
   padding: 6px 12px;
   margin: 20px auto;
-  font-weight: 600;
+  font-weight: 700;
   width: 150px;
+  background-color: black;
+  color: white;
 }
 
 .login_questions {
   text-align: center;
+}
+
+.singlePost {
+  padding: 30px 50px;
+}
+
+.left_image img {
+  width: 1000px;
+  height: 550px;
+  object-fit: cover;
+}
+
+.form_err {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
 }

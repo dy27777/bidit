@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const routes = require("./routes/routes.js");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 require("dotenv").config();
@@ -22,9 +23,10 @@ mongoose
   });
 
 // middlewares
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 // routes
 app.use("/", routes);
