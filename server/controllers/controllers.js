@@ -84,4 +84,16 @@ const getPosts = (req, res) => {
   });
 };
 
-module.exports = { home, addPost, loginUser, signupUser, getUsers, getPosts };
+const saveFile = (req, res) => {
+  res.json({ message: "received" });
+};
+
+module.exports = {
+  home,
+  addPost,
+  loginUser,
+  signupUser,
+  getUsers,
+  getPosts,
+  saveFile,
+};

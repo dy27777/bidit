@@ -1,3 +1,5 @@
+const path = require("path");
+const multer = require("multer");
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const {
@@ -7,8 +9,22 @@ const {
   signupUser,
   getUsers,
   getPosts,
+  saveFile,
 } = require("../controllers/controllers.js");
 const router = express.Router();
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./images");
+  },
+
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
 
 const verifyJWT = (req, res, next) => {
   const token = req.cookies.tkn;
@@ -35,5 +51,6 @@ router.get("/getPosts", getPosts);
 router.post("/add", addPost);
 router.post("/login", loginUser);
 router.post("/signup", signupUser);
+router.post("/file", upload.single("file"), saveFile);
 
 module.exports = router;

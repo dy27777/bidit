@@ -19,14 +19,21 @@ const Login = ({ setIsLogin }) => {
     });
 
     if (!formData.username) {
-      setFormErr({ username: "Username or Email is required" });
-      return;
+      setFormErr((p) => {
+        return { ...p, username: "Username or Email is required" };
+      });
     }
 
     if (!formData.pwd) {
-      setFormErr({ pwd: "Password is required" });
+      setFormErr((p) => {
+        return { ...p, pwd: "Password is required" };
+      });
+    }
+
+    if (!formData.username || !formData.pwd) {
       return;
     }
+
     try {
       const res = await fetch("http://localhost:3001/login", {
         method: "POST",
